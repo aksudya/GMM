@@ -6,8 +6,8 @@
 #include <omp.h>
 
 #define MAX_GMM 5
-#define GMM_LEARN_ALPHA 0.05
-#define GMM_LEARN_ROI 0.05
+#define GMM_LEARN_ALPHA 0.1
+#define GMM_LEARN_ROI 0.1
 #define GMM_TRES 0.6
 #define GMM_ACC 2.5
 
@@ -30,7 +30,7 @@ public:
 
 	void init(Mat first_img);
 	void train(Mat img);
-	void sort_M(int i,int j);
+	void sort_M(int i,int j,int channel);
 	void get_B(Mat img);
 	void test(Mat img);
 
