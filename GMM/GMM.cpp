@@ -9,7 +9,7 @@ int main(int argc, const char** argv)
 {
 	Mat src,gray,mask;
 	MOG mog;
-	for (int i = 0; i <= 100; ++i)
+	for (int i = 0; i <= 200; ++i)
 	{
 		std::ostringstream os;
 		os<<setw(5) << setfill('0') << i;
@@ -34,10 +34,12 @@ int main(int argc, const char** argv)
 
 		mask = mog.mask.clone();
 		//morphologyEx(mask, mask, MORPH_OPEN, Mat());
-		erode(mask, mask, Mat(5, 5, CV_8UC1), Point(-1, -1));  // You can use Mat(5, 5, CV_8UC1) here for less distortion  
-		dilate(mask, mask, Mat(5, 5, CV_8UC1), Point(-1, -1));
+		erode(mask, mask, Mat(5, 5, CV_8UC1), Point(-1, -1));
+		dilate(mask, mask, Mat(6, 6, CV_8UC1), Point(-1, -1));
+
 		
 	}
-
-	imshow("gray",gray);
+	//waitKey(0);
+	imshow("gray", mask);
+	//imshow("gray", mask);
 }
