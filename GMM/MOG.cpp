@@ -35,8 +35,6 @@ void MOG::train(Mat img)
 		{
 			for (int channel = 0; channel < 3; ++channel)
 			{
-
-
 				float sum_weigt = 0;
 				int match = 0;
 				for (int k = 0; k < MAX_GMM; ++k)
@@ -110,6 +108,7 @@ void MOG::get_B(Mat img)
 void MOG::test(Mat img)
 {
 	mask.setTo(255);
+#pragma omp parallel for
 	for (int i = 0; i < img.rows; ++i)
 	{
 		for (int j = 0; j < img.cols; ++j)

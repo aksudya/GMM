@@ -3,9 +3,10 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/opencv.hpp"  
 #include <iostream>
+#include<ctime>
 #include <omp.h>
 
-#define MAX_GMM 5
+#define MAX_GMM 10
 #define GMM_LEARN_ALPHA 0.05
 #define GMM_LEARN_ROI 0.05
 #define GMM_TRES 0.6
